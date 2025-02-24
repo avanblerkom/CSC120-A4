@@ -17,26 +17,40 @@ public class Engine implements EngineRequirements{
             this.maxFuelLevel = maxFuelLevel;
         }
     
-        //Methods 
+        /**
+         * Gets the fuel type of the engine.
+         * @return The fuel type of the engine.
+         */
         public FuelType getFuelType() {
             return this.f;
         }
-    
+        /**
+         * Gets the maximum fuel level of the engine.
+         * @return The maximum fuel level of the engine.
+         */
         public double getMaxFuel() {
-            return 0.; //placeholder
-    
+            return this.maxFuelLevel;
         }
-    
+        /**
+         * Gets the current fuel level of the engine.
+         * @return The current fuel level of the engine.
+         */
         public double getCurrentFuel() {
-            return 0.; //placeholder
+            return this.currentFuelLevel;
         }
     
-         
+        /**
+         * Refuels the engine to its maximum fuel level.
+         */
         public void refuel() {
             this.currentFuelLevel = this.maxFuelLevel;
         }
-    
-        public Boolean go() {
+
+    /**
+     * Starts the engine and consumes fuel.
+     * @return True if the engine started successfully, false otherwise.
+     */
+    public Boolean go() {
             if (this.currentFuelLevel > 0) {
                 this.currentFuelLevel -= 1; // Assuming each go operation consumes 1 unit of fuel
                 return true;
