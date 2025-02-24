@@ -33,11 +33,16 @@ public class Engine implements EngineRequirements{
     
          
         public void refuel() {
-    
+            this.currentFuelLevel = this.maxFuelLevel;
         }
     
         public Boolean go() {
-            return true;
+            if (this.currentFuelLevel > 0) {
+                this.currentFuelLevel -= 1; // Assuming each go operation consumes 1 unit of fuel
+                return true;
+            } else {
+                return false;
+            }
         }
     
         public String toString() {
